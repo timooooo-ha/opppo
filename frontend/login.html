@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход - Трекер багов</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="style-login.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <span class="logo-icon">!</span>
+            <span class="logo-text">Трекер багов</span>
+        </div>
+    </header>
+    <main class="page">
+        <p class="breadcrumbs">Трекер багов / вход</p>
+        <h1 class="page-title">Вход в систему</h1>
+        <p class="page-subtitle">Используйте email и пароль, которые выдал тимлид вашего ПО.</p>
+        <div class="login">
+            <form class="card login-form">
+                <h2 class="card-title">Вход</h2>
+                <label class="field-label" for="email">Email *</label>
+                <input class="field" type="email" id="email" placeholder="Введите email">
+                <label class="field-label" for="password">Пароль *</label>
+                <input class="field" type="password" id="password" placeholder="Введите пароль">
+                <button class="btn btn-primary btn-wide" type="button" id="login-btn">Войти</button>
+            </form>
+            <aside class="card login-info">
+                <h2 class="card-title">Доступ</h2>
+                <p class="card-text">Учётную запись создаёт тимлид ПО, когда добавляет вас в команду. Самостоятельной регистрации нет.</p>
+                <p class="card-text">Забыли пароль - попросите тимлида сбросить его. Новый временный пароль нужно сменить при первом входе.</p>
+            </aside>
+        </div>
+    </main>
+</body>
+</html>
