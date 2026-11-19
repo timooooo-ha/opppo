@@ -45,6 +45,89 @@
     <main class="page">
         <p class="breadcrumbs">Рабочая область / Список багов</p>
         <h1 class="page-title">Список багов</h1>
+        <label class="field-label" for="search">Поиск</label>
+        <input class="field" type="text" id="search" placeholder="Поиск по названию или номеру бага">
+        <div class="filters">
+            <div class="filter">
+                <label class="field-label" for="status">Статус</label>
+                <div class="select-wrap">
+                    <button class="field select" type="button" id="status">Все</button>
+                </div>
+            </div>
+            <div class="filter">
+                <label class="field-label" for="priority">Приоритет</label>
+                <div class="select-wrap">
+                    <button class="field select" type="button" id="priority">Все</button>
+                </div>
+            </div>
+            <div class="filter">
+                <label class="field-label" for="module">ПО / модуль</label>
+                <div class="select-wrap">
+                    <button class="field select" type="button" id="module">Портал / все модули</button>
+                </div>
+            </div>
+        </div>
+        <div class="chips">
+            <button class="chip" type="button">Созданные мной</button>
+            <button class="chip" type="button">Просроченные</button>
+            <a class="link" href="#">Сбросить фильтры</a>
+        </div>
+        <div class="list-head">
+            <p class="list-count">Найдено 8 багов</p>
+            <button class="btn btn-primary btn-create" type="button">
+                <span class="plus">+</span> Создать тикет
+            </button>
+        </div>
+        <div class="bug-list">
+            <article class="card bug">
+                <div class="bug-info">
+                    <p class="bug-meta">BUG-131 · ПО «Портал» · модуль «Оплата»</p>
+                    <h2 class="bug-title">Кнопка «Оплатить» не реагирует в Safari</h2>
+                    <div class="bug-tags">
+                        <span class="status status-new">Новый</span>
+                        <span class="priority priority-critical">Критический</span>
+                    </div>
+                    <p class="bug-meta">Ответственный: не назначен <span class="bug-deadline">Дедлайн: <span>-</span></span></p>
+                </div>
+                <button class="btn btn-open" type="button">Открыть</button>
+            </article>
+            <article class="card bug">
+                <div class="bug-info">
+                    <p class="bug-meta">BUG-133 · ПО «Портал» · модуль «Оплата»</p>
+                    <h2 class="bug-title">Список заказов не обновляется после оплаты</h2>
+                    <div class="bug-tags">
+                        <span class="status status-assigned">Назначен</span>
+                        <span class="priority priority-high">Высокий</span>
+                    </div>
+                    <p class="bug-meta">Ответственный: Мария Смирнова <span class="bug-deadline">Дедлайн: <span class="overdue">18.11.2026 18:00</span></span></p>
+                </div>
+                <button class="btn btn-open" type="button">Открыть</button>
+            </article>
+            <article class="card bug">
+                <div class="bug-info">
+                    <p class="bug-meta">BUG-128 · ПО «Портал» · модуль «Профиль»</p>
+                    <h2 class="bug-title">Не сохраняется профиль после смены аватара</h2>
+                    <div class="bug-tags">
+                        <span class="status status-work">В работе</span>
+                        <span class="priority priority-high">Высокий</span>
+                    </div>
+                    <p class="bug-meta">Ответственный: Мария Смирнова <span class="bug-deadline">Дедлайн: <span class="overdue">14.11.2026 18:00</span></span></p>
+                </div>
+                <button class="btn btn-open" type="button">Открыть</button>
+            </article>
+            <article class="card bug">
+                <div class="bug-info">
+                    <p class="bug-meta">BUG-125 · ПО «Портал» · модуль «Авторизация»</p>
+                    <h2 class="bug-title">Опечатка в письме подтверждения регистрации</h2>
+                    <div class="bug-tags">
+                        <span class="status status-check">На проверке</span>
+                        <span class="priority priority-low">Низкий</span>
+                    </div>
+                    <p class="bug-meta">Ответственный: Дмитрий Козлов <span class="bug-deadline">Дедлайн: <span>10.11.2026 12:00</span></span></p>
+                </div>
+                <button class="btn btn-open" type="button">Открыть</button>
+            </article>
+        </div>
     </main>
 </body>
 </html>
