@@ -1,0 +1,5 @@
+curl -i -X POST http://localhost:5000/api/projects -H "Content-Type": "application/json" -d '{"name": "BT", "repository_url": "https://github.com/mrKayan-code/super-jackson"}'
+
+
+
+curl -i -X POST http://localhost:5000/api/auth/login -H "Content-Type": "application/json" -d '{"email":"admin@example.com", "password": "ChangeMe123!"}'
