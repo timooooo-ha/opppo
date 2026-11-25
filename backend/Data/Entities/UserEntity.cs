@@ -15,6 +15,7 @@ public class UserEntity {
     public ICollection<TicketEntity> AuthoredTickets { get; set; } = [];
     public ICollection<TicketEntity> AssignedTickets { get; set; } = [];
     public ICollection<CommentEntity> Comments { get; set; } = [];
+    public ICollection<AttachmentEntity> UploadedAttachments { get; set; } = [];
     public ICollection<HistoryEntryEntity> HistoryEntries { get; set; } = [];
     public ICollection<NotificationEntity> Notifications { get; set; } = [];
 }

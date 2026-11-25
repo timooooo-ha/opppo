@@ -1,63 +1,51 @@
 namespace WebApiApp.Data.Entities;
 
 public enum ProjectRole {
-    Lead,
-    Developer,
-    Tester
+    LEAD,
+    DEVELOPER,
+    TESTER
 }
 
 public enum Priority {
-    Low,
-    Medium,
-    High,
-    Critical
+    LOW,
+    MEDIUM,
+    HIGH,
+    CRITICAL
 }
 
 public enum TicketStatus {
-    New,
-    Assigned,
-    InProgress,
-    InReview,
-    Returned,
-    Closed,
-    Rejected
+    NEW,
+    ASSIGNED,
+    IN_PROGRESS,
+    IN_REVIEW,
+    RETURNED,
+    CLOSED,
+    REJECTED
 }
 
 public enum RejectReason {
-    Duplicate,
-    NotABug,
-    CannotReproduce,
-    Other
+    DUPLICATE,
+    NOT_A_BUG,
+    CANNOT_REPRODUCE,
+    OTHER
 }
 
 public enum CommentKind {
-    User,
-    ReturnReason,
-    RejectReason,
-    FixNote
+    USER,
+    RETURN_REASON,
+    REJECT_REASON,
+    FIX_NOTE
 }
 
 public enum EventType {
-    TicketCreated,
-    TicketAssigned,
-    TicketInProgress,
-    TicketInReview,
-    TicketReturned,
-    TicketClosed,
-    TicketRejected,
-    CommentAdded,
-    AddedToProject,
-    DeadlineSoon,
-    DeadlineOverdue
+    TICKET_CREATED,
+    TICKET_ASSIGNED,
+    TICKET_IN_PROGRESS,
+    TICKET_IN_REVIEW,
+    TICKET_RETURNED,
+    TICKET_CLOSED,
+    TICKET_REJECTED,
+    COMMENT_ADDED,
+    ADDED_TO_PROJECT
 }
 
-public enum TicketAction {
-    Edit,
-    Plan,
-    Take,
-    MarkFixed,
-    Close,
-    Return,
-    Reject,
-    Comment
-}

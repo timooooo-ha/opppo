@@ -9,7 +9,7 @@ public class HistoryEntryEntity {
     public Guid ChangedById { get; set; }
     public string Field { get; set; } = null!;
     public string? OldValue { get; set; }
-    public string NewValue { get; set; } = null!;
+    public string? NewValue { get; set; }
     public DateTime ChangedAt { get; set; }
 
     public TicketEntity Ticket { get; set; } = null!;

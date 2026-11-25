@@ -12,7 +12,6 @@ public class NotificationEntity {
     public string Text { get; set; } = null!;
     public DateTime CreatedAt { get; set; }
     public bool IsRead { get; set; }
-    public DateTime? EmailSentAt { get; set; }
 
     public UserEntity Recipient { get; set; } = null!;
     public TicketEntity? Ticket { get; set; }
