@@ -37,7 +37,7 @@ public class ProjectController : ControllerBase {
 
         }
         catch (ProjectConflictException exception) {
-            return Conflict(exception);
+            return Conflict(exception.Errors);
         }
 
     }
@@ -86,7 +86,7 @@ public class ProjectController : ControllerBase {
             return Forbid();
         }
         catch (ProjectConflictException exception) {
-            return Conflict(exception);
+            return Conflict(exception.Errors);
         }
 
     }

@@ -1,5 +1,26 @@
-curl -i -X POST http://localhost:5000/api/projects -H "Content-Type": "application/json" -d '{"name": "BT", "repository_url": "https://github.com/mrKayan-code/super-jackson"}'
+curl -i -X POST http://localhost:5000/api/projects -H "Content-Type: application/json" -d '{"name": "BT", "repository_url": "https://github.com/mrKayan-code/super-jackson"}'
 
 
 
-curl -i -X POST http://localhost:5000/api/auth/login -H "Content-Type": "application/json" -d '{"email":"admin@example.com", "password": "ChangeMe123!"}'
+curl -i -X POST http://localhost:5000/api/auth/login -H "Content-Type: application/json" -d '{"email":"admin@example.com", "password": "ChangeMe123!"}'
+
+TOKEN="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwMWEyMTM2OS00ZmY2LTdkYWMtYmI0Ni1iNDVjODNjYmNlYTUiLCJleHAiOjE3OTU2MjY3NjksImlzcyI6IldlYkFwaUFwcCIsImF1ZCI6IldlYkFwaUFwcCJ9.bNIQAbnUc9JlawG2beg0p6M8eF8IKtNrdGA_RNCsvHA"
+
+
+curl -i -X POST http://localhost:5000/api/auth/login -H "Content-Type: application/json" -d '{"email":"admin@example.com", "password": "suba"}'
+
+
+curl -i -X POST http://localhost:5000/api/projects -H "Authorization: Bearer $TOKEN" -H "Content-Type: application/json" -d '{"name": "BT", "repository_url": "https://github.com/mrKayan-code/super-jackson"}'
+
+PROJECT_ID="01a21380-fd13-712f-981a-051fc3c8c664"
+
+curl -i http://localhost:5000/api/projects/my -H "Authorization: Bearer $TOKEN"
+
+curl -i -X POST "http://localhost:5000/api/projects/$PROJECT_ID/modules" -H "Authorization: Bearer $TOKEN" -H "Content-Type: application/json" -d '{"name":"back","description":"шарпы"}'
+
+curl -i -X POST "http://localhost:5000/api/projects/000-00000-0000-00000-00000000000000/modules" -H "Authorization: Bearer $TOKEN" -H "Content-Type: application/json" -d '{"name":"backend"}'
+
+
+curl -i -X POST http://localhost:5000/api/projects -H "Authorization: Bearer $TOKEN" -H "Content-Type: application/json" -d '{"name": "", "repository_url": "https://github.com/mrKayan-code/super-jackson"}'
+
+curl -i -X POST http://localhost:5000/api/projects -H "Authorization: Bearer $TOKEN" -H "Content-Type: application/json" -d '{"name": "subaring", "repository_url": "not_a_url"}'
