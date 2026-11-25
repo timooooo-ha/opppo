@@ -6,7 +6,7 @@ namespace WebApiApp.Data.Entities;
 public class ProjectEntity {
     public Guid Id { get; set; }
     public string Name { get; set; } = null!;
-    public string? Description { get; set; } = null!;
+    public string? Description { get; set; }
     public string RepositoryUrl { get; set; } = null!;
     public DateTime RegisteredAt { get; set; }
     public int NextTicketNumber { get; set; }
