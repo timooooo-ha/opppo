@@ -1,0 +1,111 @@
+:root {
+    --color-bg-page: #17212B;
+
+    --color-text-primary: #ECF3F9;
+
+    --color-border-default: #242F3B;
+
+    --color-icon-default: #B4BDCE;
+
+    --color-text-secondary: #B4BDCE;
+
+    --color-bg-input: #475062;
+
+    --color-text-on-primary: #CFE9FF;
+
+    --color-button-primary: #1B446F;
+
+    --color-icon-accent: #6BB2EE;
+
+    --color-text-error: #F1839D;
+
+    --color-bg-surface: #1B2733;
+
+    --color-status-in-progress: #FFD79F;
+
+    --color-text-link: #6BB2EE;
+
+    --color-border-focus: #6BB2EE;
+
+    --color-button-background: #475062;
+
+    --color-bg-error: #65243A;
+
+    --color-text-disabled: #8A93A6;
+
+    --color-bg-selected: #1B446F;
+
+    --color-border-strong: #475062;
+
+    --color-status-rejected-text: #B4BDCE;
+
+    --color-status-returned-text: #F1839D;
+
+    --color-border-error: #F1839D;
+
+    --color-bg-surface-raised: #242F3B;
+
+    --color-bg-button-disabled: #2E3A48;
+
+    --color-bg-input-disabled: #2E3A48;
+
+    --color-status-inprogress-bg: #A15C40;
+
+    --color-status-new-text: #CFE9FF;
+
+    --color-status-inreview-bg: #1B5E83;
+
+    --color-status-rejected-bg: #475062;
+
+    --color-status-returned-bg: #65243A;
+
+    --color-text-success: #81C0B1;
+
+    --color-status-inreview-text: #9FD8F0;
+
+    --color-status-new-bg: #1B446F;
+
+    --color-bg-button-primary-hover: #264D77;
+
+    --color-status-closed-bg: #2A6254;
+
+    --color-bg-success: #2A6254;
+
+    --color-status-assigned-bg: #393373;
+
+    --color-bg-button-secondary-hover: #5C6580;
+
+    --color-status-closed-text: #81C0B1;
+
+    --color-status-assigned-text: #C9C3FF;
+
+
+    --font-h1: 32px/40px "Manrope", sans-serif;
+
+    --font-h2: 23px/32px "Manrope", sans-serif;
+
+    --font-h3: 18px/26px "Manrope", sans-serif;
+
+    --font-body-small: 14px/20px "Manrope", sans-serif;
+
+    --font-body-regular: 16/24px "Manrope", sans-serif;
+
+    --font-label-medium: 14px/20px "Manrope", sans-serif;
+
+    --font-label-small: 12px/16px "Manrope", sans-serif;
+
+
+    --spacing-2xs: 4px;
+    --spacing-xs: 8px;
+    --spacing-sm: 12px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-full: 999px;
+
+
+}
