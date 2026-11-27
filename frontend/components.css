@@ -183,3 +183,39 @@ button, input, textarea, select {
     color: var(--color-text-secondary);
 }
 
+
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+    padding: 0 var(--spacing-xl);
+    border-bottom: 1px solid var(--color-border-default);
+    font: var(--font-label);
+}
+
+.navbar-divider {
+    width: 1px;
+    height: 20px;
+    background-color: var(--color-border-strong);
+
+}
+
+.navbar-link {
+    padding: 14px 0 12px;
+    border-bottom: 2px solid transparent;
+    color: var(--color-text-secondary);
+}
+
+.navbar-link:hover {
+    color: var(--color-text-primary);
+}
+
+.navbar-link-active {
+    border-bottom-color: var(--color-border-focus);
+    color: var(--color-text-link);
+}
+
+.navbar-aside {
+    margin-left: auto;
+}
+
