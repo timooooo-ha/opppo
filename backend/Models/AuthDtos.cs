@@ -13,6 +13,15 @@ public class LoginRequestDto {
     public string Password { get; set; } = string.Empty;
 }
 
+public class ChangePasswordRequestDto {
+    [Required(ErrorMessage = "is required")]
+    public string CurrentPassword { get; set; } = string.Empty;
+
+    [Required(ErrorMessage = "is required")]
+    [MinLength(8, ErrorMessage = "must be at leat 8 characters")]
+    public string NewPassword { get; set; } = string.Empty;
+}
+
 public class LoginResponseDto {
     public string Token { get; set; } = string.Empty;
     public AuthUserResponseDto User { get; set; } = null!;
