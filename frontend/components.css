@@ -219,3 +219,56 @@ button, input, textarea, select {
     margin-left: auto;
 }
 
+
+.page {
+    padding: var(--spacing-xl);
+}
+
+.breadcrumbs {
+    margin-bottom: var(--spacing-xs);
+    font: var(--font-body-small);
+    color: var(--color-text-secondary);
+}
+
+.page-title {
+    font: var(--font-h1);
+}
+
+.page-subtitle {
+    margin-top: var(--spacing-xs);
+    color: var(--color-text-secondary);
+}
+
+.columns {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
+.columns-main {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    flex: 1;
+}
+
+.columns-side {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    flex-shrink: 0;
+    width: 380px;
+}
+
+.panel {
+    padding: var(--spacing-lg);
+    border: 1px solid var(--color-border-default);
+    border-radius: var(--radius-lg);
+    background-color: var(--color-bg-surface);
+}
+
+.panel-title {
+    font: var(--font-h3);
+}
+
