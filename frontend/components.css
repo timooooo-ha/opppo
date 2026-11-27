@@ -272,3 +272,67 @@ button, input, textarea, select {
     font: var(--font-h3);
 }
 
+
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xs);
+    min-height: 40px;
+    padding: var(--spacing-xs) var(--spacing-md);
+    border: none;
+    border-radius: var(--radius-md);
+    font: var(--font-label);
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.btn-primary {
+    color: var(--colot-text-on-primary);
+    background-color: var(--color-bg-button-primary);
+
+}
+
+.btn-primary:hover {
+    background-color: var(--color-bg-button-primary-hover);
+}
+
+.btn-secondary {
+    color: var(--color-text-primary);
+    background-color: var(--color-bg-button-secondary);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-bg-button-secondary-hover);
+}
+
+.btn-danger {
+    color: var(--color-text-error);
+    background-color: var(--color-bg-error);
+}
+
+.btn-danger:hover {
+    outline: 1px solid var(--color-border-error);
+    background-color: var(--color-bg-error);
+}
+
+.btn-ghost {
+    color: var(--color-text-link);
+    background-color: transparent;
+}
+
+.btn-ghost:hover {
+    background-color: var(--color-bg-surface-raised);
+}
+
+.btn:disabled {
+    outline: none;
+    color: var(--color-text-disabled);
+    background-color: var(--color-bg-button-disabled);
+    cursor: default;
+}
+
+.btn-ghost:disabled {
+    background-color: transparent;
+}
