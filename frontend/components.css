@@ -144,3 +144,42 @@ button, input, textarea, select {
     color: var(--color-icon-default);
 }
 
+.bell {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: var(--spacing-xs);
+    border-radius: var(--radius-md);
+    color: var(--color-icon-default);
+    background-color: var(--color-bg-input);
+}
+
+.bell-active {
+    color: var(--color-icon-accent);
+    background-color: var(--color-bg-selected);
+
+}
+
+.bell-count {
+    padding: var(--spacing-2xs) var(--spacing-xs);
+    border-radius: var(--radius-full);
+    font: var(--font-label-small);
+    color: var(--color-text-error);
+    background-color: var(--color-bg-error);
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.user-name {
+    font: var(--font-body-regular);
+}
+
+.user-role {
+    font: var(--font-body-small);
+    color: var(--color-text-secondary);
+}
+
