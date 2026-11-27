@@ -43,7 +43,7 @@ public class ProjectController : ControllerBase {
     }
 
     [HttpGet("my")]
-    public async Task<ActionResult<ProjectResponseDto>> GetMine(
+    public async Task<ActionResult<List<ProjectResponseDto>>> GetMine(
         CancellationToken cancellationToken
     ) {
         if (!Guid.TryParse(User.FindFirstValue("sub"), out var actorId)) {

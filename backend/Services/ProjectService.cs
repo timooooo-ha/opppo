@@ -1,4 +1,3 @@
-using System.Transactions;
 using Microsoft.EntityFrameworkCore;
 using WebApiApp.Data;
 using WebApiApp.Data.Entities;
@@ -9,9 +8,14 @@ namespace WebApiApp.Services;
 
 public class ProjectService : IProjectService {
     private readonly AppDbContext _context;
+    private readonly ProjectAccessService _projectAccessService;
 
-    public ProjectService(AppDbContext context) {
+    public ProjectService(
+        AppDbContext context,
+        ProjectAccessService projectAccessService
+    ) {
         _context = context;
+        _projectAccessService = projectAccessService;
     }
 
     public async Task<ProjectResponseDto> CreateProjectAsync(
@@ -64,7 +68,15 @@ public class ProjectService : IProjectService {
             .Where(member => member.UserId == actorId)
             .OrderBy(member => member.Project.Name)
             .ThenBy(member => member.Project.Id)
-            .Select(member => MapToResponse(member.Project, member.Role))
+            .Select(member => new ProjectResponseDto {
+                Id = member.Project.Id,
+                Name = member.Project.Name,
+                Description = member.Project.Description,
+                RepositoryUrl = member.Project.RepositoryUrl,
+                RegisteredAt = member.Project.RegisteredAt,
+                NextTicketNumber = member.Project.NextTicketNumber,
+                CurrentUserRole = member.Role
+            })
             .ToListAsync(cancellationToken);
     }
 
@@ -74,24 +86,12 @@ public class ProjectService : IProjectService {
         Guid actorId,
         CancellationToken cancellationToken
     ) {
-        var projectExists = await _context.Projects
-            .AsNoTracking()
-            .AnyAsync(project => project.Id == projectId, cancellationToken);
-
-        if (!projectExists) {
-            throw new ProjectNotFoundException();
-        }
-
-        var membership = await _context.ProjectMembers
-            .AsNoTracking()
-            .SingleOrDefaultAsync(
-                member => member.ProjectId == projectId && member.UserId == actorId,
-                cancellationToken
-            );
-
-        if (membership is null || membership.Role != ProjectRole.LEAD) {
-            throw new ProjectAccessDeniedException();
-        }
+        await _projectAccessService.EnsureRoleAsync(
+            actorId,
+            projectId,
+            ProjectRole.LEAD,
+            cancellationToken
+        );
 
         var name = request.Name.Trim();
         var moduleNameExists = await _context.Modules
