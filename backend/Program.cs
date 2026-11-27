@@ -22,8 +22,12 @@ public class Program {
             options.UseNpgsql(connection));
 
         builder.Services.AddScoped<IPasswordHasher<UserEntity>, PasswordHasher<UserEntity>>();
+        builder.Services.AddScoped<ProjectAccessService>();
+        builder.Services.AddScoped<UserAccountService>();
+        builder.Services.AddScoped<INotificationsWriter, NotificationsWriter>();
         builder.Services.AddScoped<IAuthService, AuthService>();
         builder.Services.AddScoped<IProjectService, ProjectService>();
+        builder.Services.AddScoped<IProjectMemberService, ProjectMemberService>();
         builder.Services.AddScoped<DatabaseInitializer>();
 
         var jwtSecretKey = builder.Configuration["Jwt:SecretKey"]
