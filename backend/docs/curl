@@ -3,6 +3,7 @@ curl -i -X POST http://localhost:5000/api/projects -H "Content-Type: application
 
 
 curl -i -X POST http://localhost:5000/api/auth/login -H "Content-Type: application/json" -d '{"email":"admin@example.com", "password": "ChangeMe123!"}'
+curl -i -X POST https://localhost:7158/api/auth/login -H "Content-Type: application/json" -d '{"email":"admin@example.com", "password": "ChangeMe123!"}'
 
 TOKEN="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwMWEyMTM2OS00ZmY2LTdkYWMtYmI0Ni1iNDVjODNjYmNlYTUiLCJleHAiOjE3OTU2MjY3NjksImlzcyI6IldlYkFwaUFwcCIsImF1ZCI6IldlYkFwaUFwcCJ9.bNIQAbnUc9JlawG2beg0p6M8eF8IKtNrdGA_RNCsvHA"
 
