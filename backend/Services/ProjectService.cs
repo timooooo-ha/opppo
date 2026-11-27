@@ -90,7 +90,7 @@ public class ProjectService : IProjectService {
             );
 
         if (membership is null || membership.Role != ProjectRole.LEAD) {
-            throw new ProjectAccesDeniedException();
+            throw new ProjectAccessDeniedException();
         }
 
         var name = request.Name.Trim();

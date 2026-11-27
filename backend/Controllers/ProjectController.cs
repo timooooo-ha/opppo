@@ -82,7 +82,7 @@ public class ProjectController : ControllerBase {
         catch (ProjectNotFoundException) {
             return NotFound();
         }
-        catch (ProjectAccesDeniedException) {
+        catch (ProjectAccessDeniedException) {
             return Forbid();
         }
         catch (ProjectConflictException exception) {

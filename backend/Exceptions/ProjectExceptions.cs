@@ -10,5 +10,5 @@ public class ProjectConflictException : Exception {
 
 public class ProjectNotFoundException : Exception;
 
-public class ProjectAccesDeniedException : Exception;
+public class ProjectAccessDeniedException : Exception;
 
