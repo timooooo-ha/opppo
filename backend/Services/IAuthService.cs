@@ -7,4 +7,10 @@ public interface IAuthService {
         LoginRequestDto request,
         CancellationToken cancellationToken
     );
+
+    Task ChangePasswordAsync(
+        Guid actorId,
+        ChangePasswordRequestDto request,
+        CancellationToken cancellationToken
+    );
 }

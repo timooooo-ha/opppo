@@ -1,4 +1,6 @@
+using System.Security.Claims;
 using Microsoft.AspNetCore.Mvc;
+using WebApiApp.Exceptions;
 using WebApiApp.Models;
 using WebApiApp.Services;
 
@@ -25,5 +27,27 @@ public class AuthController : ControllerBase {
         }
 
         return Ok(response);
+    }
+
+    [HttpPost("change-password")]
+    public async Task<IActionResult> ChangePassword(
+       [FromBody] ChangePasswordRequestDto request,
+       CancellationToken cancellationToken
+    ) {
+        if (!Guid.TryParse(User.FindFirstValue("sub"), out var actorId)) {
+            return Unauthorized();
+        }
+
+        try {
+            await _authService.ChangePasswordAsync(actorId, request, cancellationToken);
+
+            return NoContent();
+        }
+        catch (AuthUserNotFoundException) {
+            return Unauthorized();
+        }
+        catch (AuthValidationException exception) {
+            return BadRequest(exception.Errors);
+        }
     }
 }

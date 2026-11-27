@@ -8,3 +8,4 @@ public class AuthValidationException : Exception {
     }
 }
 
+public class AuthUserNotFoundException : Exception;

@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using WebApiApp.Data;
 using WebApiApp.Data.Entities;
+using WebApiApp.Exceptions;
 using WebApiApp.Models;
 
 namespace WebApiApp.Services;
@@ -56,6 +57,37 @@ public class AuthService : IAuthService {
                 MustChangePassword = user.MustChangePassword
             }
         };
+
+    }
+
+    public async Task ChangePasswordAsync(
+        Guid actorId,
+        ChangePasswordRequestDto request,
+        CancellationToken cancellationToken
+    ) {
+        var user = await _context.Users.SingleOrDefaultAsync(user => user.Id == actorId, cancellationToken);
+
+        if (user is null) {
+            throw new AuthUserNotFoundException();
+        }
+
+        var verificationResult = _passwordHasher.VerifyHashedPassword(
+            user,
+            user.PasswordHash,
+            request.CurrentPassword
+        );
+
+        if (verificationResult == PasswordVerificationResult.Failed) {
+            throw new AuthValidationException(new Dictionary<string, string> {
+                ["current_password"] = "is incorrect"
+            });
+        }
+
+        user.PasswordHash = _passwordHasher.HashPassword(user, request.NewPassword);
+        user.MustChangePassword = false;
+
+
+        await _context.SaveChangesAsync(cancellationToken);
 
     }
 
